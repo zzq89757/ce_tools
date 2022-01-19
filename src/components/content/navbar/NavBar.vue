@@ -85,15 +85,17 @@
   .router-link-active {
     display: inline-block;
     color: #04429a;
-    border-bottom: 3px solid #04429a;
+    /* border-bottom: 3px solid #04429a; */
   }
-
+  .topbar .banner .router-link-active::after{
+    transform: scaleX(1);
+  }
   .topbar {
     /* position: relative; */
     /* display: flex; */
     background-color: #ffffff;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-    padding-top: 8px;
+    padding-top: 2px;
   }
   .logo{
 
@@ -105,14 +107,27 @@
   }
 
   .topbar .title {
-    margin: 14px 30px;
-    padding: 5px 0px;
+    margin: 0px 30px;
+    padding: 16px 0px;
     transition: all 0.1s linear 0s;
   }
-
+  .topbar .title::after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: #04429a;
+    transform: scaleX(0);
+    transition: all .4s ease;
+  }
   .topbar .title:hover {
     color: #04429a;
-    border-bottom: 3px solid #04429a;
+    /* border-bottom: 3px solid #04429a; */
+  }
+  .topbar .title:hover::after{
+    transform: scaleX(1);
   }
 
   .topbar .banner {
