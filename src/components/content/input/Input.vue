@@ -11,7 +11,8 @@
       placeholder="请输入完整的目的序列"
       v-limit-input-basen
       spellcheck="false"
-      @change="userInput"
+      v-model.lazy="current_seq"
+      @input="userInput"
     ></textarea>
   </div>
 </template>
@@ -32,7 +33,8 @@ export default {
 
   methods: {
       userInput(){
-          this.$emit("userChange",this.current_seq)
+          this.$emit("uChange",this.current_seq);
+          console.log("%c" + this.current_seq,"color:yellow");
       }
   },
   props: {
@@ -44,5 +46,5 @@ export default {
   },
 };
 </script>
-<style lang='scss' scoped>
+<style lang='css' scoped>
 </style>

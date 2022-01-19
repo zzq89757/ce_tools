@@ -15,16 +15,16 @@ Vue.directive("LimitInputBase", {
     el.oninput = () => {
       // el.value = el.value.toUpperCase().match(/[AGCT]+/g);
       el.value = el.value.toUpperCase().replace(/[^AGCT\n]+/g, "");
-      console.log("%c" + el.value, "color:red");
+      console.log("%c" + el.value, "color:green");
     };
   }
 });
 Vue.directive("LimitInputBasen", {
   bind(el) {
     el.oninput = () => {
-      console.log("%c" + typeof el.value, "color:red");
+      console.log("%c" + typeof el.value, "color:blue");
       el.value = el.value.toUpperCase().replace(/[^AGCT\n]+/g, "");
-      console.log("%c" + el.value, "color:red");
+      console.log("%c" + el.value, "color:green");
     };
   }
 });

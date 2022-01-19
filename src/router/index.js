@@ -12,37 +12,35 @@ const DNAsequence = () => import('@/views/DNAsequence')
 const Restructure = () => import('@/views/Restructure')
 
 Vue.use(Router)
-const routes = [
-  {
-    path: '/',
-    redirect: '/simple',
-    name: 'App',
-  }, {
-    path: '/multifragment',
-    name: 'MultiFragment',
-    component: MultiFragment
-  }, {
-    path: '/simple',
-    name: 'simple',
-    component: Simple
-  }, {
-    path: '/multipoint',
-    name: 'multipoint',
-    component: Multipoint
-  }, {
-    path: '/restructure',
-    name: 'restructure',
-    component: Restructure
-  }, {
-    path: '/dnasuquence',
-    name: 'dnasuquence',
-    component: DNAsequence
-  }, {
-    path: '/tmcal',
-    name: 'tmcal',
-    component: Tmcal
-  }
-]
+const routes = [{
+  path: '/',
+  redirect: '/simple',
+  name: 'App',
+}, {
+  path: '/multifragment',
+  name: 'MultiFragment',
+  component: MultiFragment
+}, {
+  path: '/simple',
+  name: 'simple',
+  component: Simple
+}, {
+  path: '/multipoint',
+  name: 'multipoint',
+  component: Multipoint
+}, {
+  path: '/restructure',
+  name: 'restructure',
+  component: Restructure
+}, {
+  path: '/dnasuquence',
+  name: 'dnasuquence',
+  component: DNAsequence
+}, {
+  path: '/tmcal',
+  name: 'tmcal',
+  component: Tmcal
+}]
 export default new Router({
   mode: 'history',
   routes

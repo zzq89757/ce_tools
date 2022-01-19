@@ -15,7 +15,7 @@
         spellcheck="false"
       ></textarea>
     </div> -->
-    <Input @userInput="userChange"></Input>
+    <Input @uChange="userChange"></Input>
     <button @click="output_seq = dnareverse">反向</button>
     <button @click="output_seq = get_complement(input_seq)">互补</button>
     <button @click="output_seq = get_complement(dnareverse)">反向互补</button>
