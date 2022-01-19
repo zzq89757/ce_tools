@@ -40,13 +40,6 @@
       >
       </textarea>
     </div>
-
-    <!-- <h2>
-      {{ input_seq }}
-    </h2>
-    <h2>
-      {{ output_seq }}
-    </h2> -->
   </div>
 </template>
 
@@ -62,8 +55,13 @@ export default {
   // components: {},
 
   computed: {
+    //对多条以换行符分割的序列取反向序列
     dnareverse() {
-      return [...this.input_seq].reverse().join("");
+      let tmparray = this.input_seq.split("\n");
+      for (let i = 0; i < tmparray.length; i++) {
+        tmparray[i] = tmparray[i].split("").reverse().join("");
+      }
+      return tmparray.join("\n");
     },
     showInput() {
       if (!this.input_seq || !this.output_seq) {
@@ -75,24 +73,21 @@ export default {
   // mounted: {},
 
   methods: {
-    get_complement(str) {
+    //对多条以换行符分割的序列取互补序列
+    get_complement(seq) {
       let newstr = "";
-      for (let item of str) {
-        switch (item) {
-          case "A":
-            newstr += "T";
-            break;
-          case "T":
-            newstr += "A";
-            break;
-          case "C":
-            newstr += "G";
-            break;
-          case "G":
-            newstr += "C";
-            break;
-        }
+      let array = seq.split("\n");
+      for (let i = 0; i < array.length; i++) {
+        array[i] = array[i].replace(/(A|G|C|T)/g, function ($0, $1) {
+          return {
+            A: "T",
+            G: "C",
+            C: "G",
+            T: "A",
+          }[$1];
+        });
       }
+      newstr = array.join("\n");
       return newstr;
     },
   },
@@ -132,7 +127,7 @@ export default {
   height: 150px;
   margin-top: 10px;
   margin-bottom: 10px;
-  font-size:18px;
+  font-size: 18px;
   resize: none;
   outline: none;
 }
