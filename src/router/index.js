@@ -1,11 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import MultiFragment from '@/components/MultiFragment'
-import Simple from '@/components/Simple'
-import Multipoint from '@/components/Multipoint'
-import Tmcal from '@/components/Tmcal'
-import DNAsequence from '@/components/DNAsequence'
-import Restructure from '@/components/Restructure'
 
 Vue.use(Router)
 
