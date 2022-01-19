@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-<<<<<<< HEAD
 import MultiFragment from '@/components/MultiFragment'
 import Simple from '@/components/Simple'
 import Multipoint from '@/components/Multipoint'
