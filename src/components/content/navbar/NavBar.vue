@@ -11,13 +11,13 @@
         </router-link>
         <div class="clogo">
           <a class="cloud help">
-            <img src="../assets/img/help.png">
+            <img src="@/assets/img/help.png">
           </a>
           <a class="cloud" href="http://cloud.vazyme.com:83/" target="blank">
-            <img src="../assets/img/cloud.png">
+            <img src="@/assets/img/cloud.png">
           </a>
           <a class="cloud lan">
-            <img src="../assets/img/lan.png">
+            <img src="@/assets/img/lan.png">
           </a>
         </div>
       </div>

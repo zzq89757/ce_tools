@@ -1,7 +1,7 @@
 <!--  -->
 <template>
   <div>
-    <div class="destination_seq input_public">
+    <!-- <div class="destination_seq input_public">
       <div class="info_table">
         <span class="tips">1</span>
         <span class="info">目的序列</span>
@@ -14,7 +14,8 @@
         v-model.lazy="input_seq"
         spellcheck="false"
       ></textarea>
-    </div>
+    </div> -->
+    <Input @userInput="userChange"></Input>
     <button @click="output_seq = dnareverse">反向</button>
     <button @click="output_seq = get_complement(input_seq)">互补</button>
     <button @click="output_seq = get_complement(dnareverse)">反向互补</button>
@@ -44,6 +45,7 @@
 </template>
 
 <script>
+import Input from '../components/content/input/Input.vue';
 export default {
   data() {
     return {
@@ -52,7 +54,7 @@ export default {
     };
   },
 
-  // components: {},
+  components: {Input},
 
   computed: {
     //对多条以换行符分割的序列取反向序列
@@ -90,6 +92,10 @@ export default {
       newstr = array.join("\n");
       return newstr;
     },
+    userChange(recive_data){
+      this.input_seq = recive_data;
+      console.log(recive_data);
+    }
   },
 };
 </script>

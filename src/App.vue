@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import NavBar from "@/components/NavBar.vue";
+import NavBar from "@/components/content/navbar/NavBar.vue";
 import Vue from "vue";
 Vue.directive("LimitInputBase", {
   bind(el) {
