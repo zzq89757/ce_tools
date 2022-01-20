@@ -13,6 +13,7 @@
             placeholder="请输入完整的目的序列"
             spellcheck="false"
             v-limit-input-base
+            v-model="user_input"
           ></textarea>
         </div>
 
@@ -53,7 +54,11 @@
         </div>
       </div>
 
-      <div id="image_area"></div>
+      <div id="image_area">
+        <div class="picture">
+          <h2>{{user_input}}</h2>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -65,6 +70,7 @@ export default {
   data() {
     return {
       cutpoint,
+      user_input:""
     };
   },
 
