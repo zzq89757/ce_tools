@@ -1,7 +1,12 @@
 <!--  -->
 <template>
-  <div>
-    <Input @uChange="userChange" ref="in" :message="information[0]"></Input>
+  <div class="content">
+    <Input @uChange="userChange" ref="in" :message="information[0]"> </Input>
+    <div class="length_message">
+      <span v-if="seq_length.filter((x) => x != 0).length > 1">各</span>
+      <span v-if="seq_length.filter((x) => x != 0).join()">序列长度：</span>
+      <span>{{ seq_length.filter((x) => x != 0).join(" ") }}</span>
+    </div>
     <button @click="output_seq = dnareverse">反向</button>
     <button @click="output_seq = get_complement(input_seq)">互补</button>
     <button @click="output_seq = get_complement(dnareverse)">反向互补</button>
@@ -14,7 +19,12 @@
     >
       清空
     </button>
-    <Input @uChange="userChange" ref="ou" :message="information[1]" :style="{ display: showInput }">
+    <Input
+      @uChange="userChange"
+      ref="ou"
+      :message="information[1]"
+      :style="{ display: showInput }"
+    >
       <textarea
         readonly
         v-limit-input-basen
@@ -28,7 +38,7 @@
 </template>
 
 <script>
-import Input from "../components/content/input/Input.vue";
+import Input from "@/components/content/input/Input.vue";
 export default {
   data() {
     return {
@@ -37,8 +47,8 @@ export default {
       information: [
         {
           num: 1,
-          message: "目的序列",
-          tips: "请输入待处理的序列，多条序列以换行符分割",
+          message: "待处理序列",
+          tips: "多条序列请以换行符分割",
         },
         {
           num: 2,
@@ -66,8 +76,28 @@ export default {
         return "none";
       }
     },
+    //每条序列的长度
+    seq_length() {
+      let array = this.input_seq.split("\n");
+      let count_array = [];
+      for (let item of array) {
+        count_array.push(item.length);
+      }
+      return count_array;
+    },
+    //判断序列存在否
+    haveInput() {
+      if (this.seq_length.length == 1 && this.seq_length[0] == 0) {
+        return "none";
+      } else {
+        return "block";
+      }
+    },
   },
-
+  // length stringfy
+  // length_string(){
+  //   return seq_length.filter(x=>x!=0).join(" ");
+  // },
   // mounted: {},
 
   methods: {
@@ -100,10 +130,47 @@ export default {
 button {
   width: 200px;
   height: 60px;
-  border-radius: 30px;
-  color: var(--white);
+  margin: 10px;
+  position: relative;
+  /* border-radius: 30px; */
+  color: var(--blue);
   font-size: 18px;
+  background-color: var(--white);
+  /* outline: none; */
+  border: 2px solid var(--blue);
+  cursor: pointer;
+  transition: 0.2s ease all;
+}
+button:hover {
+  /* color: var(--white); */
+  color: #fff;
   background-color: var(--blue);
-  outline: none;
+}
+/* .content button::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--blue);
+  transform: scaleY(0);
+  transition: .4s all ease;
+   z-index: -1; 
+} */
+/* button:hover::after{
+  transform: scaleY(1);
+} */
+.content {
+  position: relative;
+}
+.length_message {
+  position: absolute;
+  right: 74px;
+  top: 202px;
+}
+.length_message span {
+  cursor: auto;
+  color: var(--grey);
 }
 </style>

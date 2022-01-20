@@ -1,7 +1,7 @@
 <!--  -->
 <template>
   <div>
-    <input v-limit-input-base >
+    <input>
 
   </div>
 </template>

@@ -39,7 +39,11 @@ export default {
   },
   components: {},
 
-  computed: {},
+  computed: {
+    filter_seq(){
+      return this.current_seq.toUpperCase().replace(/[^AGCT\n]+/g, "")
+    }
+  },
 
   mounted: {},
 

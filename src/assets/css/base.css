@@ -15,8 +15,9 @@
 
 body {
   margin: 0px;
-  background-color: rgb(249, 250, 252);
+  background-color: #f2f2f2;
   --blue: #04429a;
+  /* --blue: #0d74eb; */
   --white: #ffffff;
   --grey: #999;
   user-select: none;
@@ -36,6 +37,7 @@ a {
 input,
 textarea {
   outline-style: none;
+  padding: 6px;
 }
 
 span,

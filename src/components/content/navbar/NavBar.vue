@@ -100,16 +100,16 @@ export default {
   padding-top: 2px;
 }
 .logo {
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
 .topbar .logo img {
-  height: 44px;
+  height: 46px;
 }
 
 .topbar .title {
   margin: 0px 30px;
-  padding: 16px 0px;
+  padding: 22px 0px;
   transition: all 0.1s linear 0s;
 }
 .topbar .title::after {

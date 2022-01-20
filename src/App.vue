@@ -13,8 +13,7 @@ import Vue from "vue";
 Vue.directive("LimitInputBase", {
   bind(el) {
     el.oninput = () => {
-      // el.value = el.value.toUpperCase().match(/[AGCT]+/g);
-      el.value = el.value.toUpperCase().replace(/[^AGCT\n]+/g, "");
+      el.value = el.value.toUpperCase().replace(/[^AGCT]+/g, "");
       console.log("%c" + el.value, "color:green");
     };
   }

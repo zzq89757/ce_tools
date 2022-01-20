@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- <Input class="input_seq"></Input> -->
     <div id="component">
       <div id="user_input">
         <div class="destination_seq input_public">
@@ -56,7 +57,7 @@
 
       <div id="image_area">
         <div class="picture">
-          <h2>{{user_input}}</h2>
+          <h2>{{filterInput}}</h2>
         </div>
       </div>
     </div>
@@ -65,6 +66,7 @@
 
 <script>
 import cutpoint from "@/assets/js/select.json";
+import Input from '@/components/content/input/Input';
 export default {
   name: "MultiFragment",
   data() {
@@ -74,9 +76,14 @@ export default {
     };
   },
 
-  // components: {},
+  components: {Input},
 
-  // computed: {},
+  computed: {
+    // just filter user input
+    filterInput(){
+      return this.user_input.toUpperCase().replace(/[^AGCT\n]+/g, "")
+    }
+  },
 
   // mounted: {},
 
@@ -98,10 +105,6 @@ export default {
   border: 1px solid;
   box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 1px,
     rgba(34, 34, 34, 0.74) 0px 0px 1px;
-}
-
-.info_table {
-  margin-bottom: 4px;
 }
 
 .tips {
