@@ -1,13 +1,33 @@
 @import "./normalize.css";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
 #app {
-    font-family: "Avenir", Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    min-width: 1300px;
-  }
-  body {
-    margin: 0px;
-    background-color: rgb(249, 250, 252);
-  }
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  min-width: 1300px;
+}
+
+body {
+  margin: 0px;
+  background-color: rgb(249, 250, 252);
+  --blue: #04429a;
+  --white: #ffffff;
+  --grey: #999;
+}
+
+a {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: var(--grey);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-shadow: 0 0 1px rgb(255 255 255 30%);
+}
