@@ -1,39 +1,42 @@
 <!--  -->
 <template>
   <div class="content">
-    <Input @uChange="userChange" ref="in" :message="information[0]"> </Input>
-    <div class="length_message">
-      <span v-if="seq_length.filter((x) => x != 0).length > 1">各</span>
-      <span v-if="seq_length.filter((x) => x != 0).join()">序列长度：</span>
-      <span>{{ seq_length.filter((x) => x != 0).join(" ") }}</span>
-    </div>
-    <button @click="output_seq = dnareverse">反向</button>
-    <button @click="output_seq = get_complement(input_seq)">互补</button>
-    <button @click="output_seq = get_complement(dnareverse)">反向互补</button>
-    <button
-      @click="
-        input_seq = '';
-        output_seq = '';
-        $refs.in.current_seq = '';
-      "
-    >
-      清空
-    </button>
-    <Input
-      @uChange="userChange"
-      ref="ou"
-      :message="information[1]"
-      :style="{ display: showInput }"
-    >
-      <textarea
-        readonly
-        v-limit-input-basen
-        class="input_seq"
-        v-model="output_seq"
-        spellcheck="false"
+    <div class="main_content">
+    <div class="bts">
+      <button @click="output_seq = dnareverse">反向</button>
+      <button @click="output_seq = get_complement(input_seq)">互补</button>
+      <button @click="output_seq = get_complement(dnareverse)">反向互补</button>
+      <button
+        @click="
+          input_seq = '';
+          output_seq = '';
+          $refs.in.current_seq = '';
+        "
+        class="clean"
       >
-      </textarea>
-    </Input>
+        清空
+      </button>
+    </div>
+    <div>
+      <Input @uChange="userChange" ref="in" :message="information[0]" class="input1"> </Input>
+      <Input
+        @uChange="userChange"
+        ref="ou"
+        :message="information[1]"
+        class="input2"
+      >
+        <textarea
+          readonly
+          v-limit-input-basen
+          class="input_seq"
+          v-model="output_seq"
+          spellcheck="false"
+        >
+        </textarea>
+      </Input>
+    </div>
+    </div>
+
   </div>
 </template>
 
@@ -73,7 +76,7 @@ export default {
     //决定是否展示输出框
     showInput() {
       if (!this.input_seq || !this.output_seq) {
-        return "none";
+        return "";
       }
     },
     //每条序列的长度
@@ -127,50 +130,68 @@ export default {
 };
 </script>
 <style lang="css" scoped>
+.content {
+  /* display: flex; */
+  width: 1200px;
+  height: 605px;
+  margin: 30px auto;
+  align-items: center;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  border-color: #ddd;
+}
+.main_content{
+  margin: 14px;
+}
+.bts {
+  /* width: 1200px; */
+  overflow: hidden;
+  /* padding-top: 10px;
+  padding-left: 40px; */
+  /* display: inline-block; */
+  padding-bottom: 14px;
+}
 button {
-  width: 200px;
-  height: 60px;
-  margin: 10px;
+  width: 80px;
+  height: 40px;
+  /* display: inline-block; */
+  float: left;
+  margin-right: 20px;
   position: relative;
   /* border-radius: 30px; */
-  color: var(--blue);
+  color: var(--white);
   font-size: 18px;
-  background-color: var(--white);
+  background-color: var(--blue);
+  background-color: #04439aca;
   /* outline: none; */
-  border: 2px solid var(--blue);
+  border: 1px solid #04439ac7;
+  border-radius: 4px;
   cursor: pointer;
-  transition: 0.2s ease all;
+  transition: 0.1s linear all;
+}
+.clean{
+  color: var(--blue);
+  background-color: var(--white);
+  border: 2px solid var(--blue);
 }
 button:hover {
   /* color: var(--white); */
   color: #fff;
   background-color: var(--blue);
+  border: 2px solid var(--blue);
 }
-/* .content button::after{
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: var(--blue);
-  transform: scaleY(0);
-  transition: .4s all ease;
-   z-index: -1; 
-} */
-/* button:hover::after{
-  transform: scaleY(1);
-} */
+
 .content {
   position: relative;
+  text-align: left;
+  }
+
+.input1{
+  width: 660px;
+  margin-right: 40px;
+
 }
-.length_message {
-  position: absolute;
-  right: 74px;
-  top: 202px;
-}
-.length_message span {
-  cursor: auto;
-  color: var(--grey);
+.input2{
+  width: 444px;
 }
 </style>

@@ -60,11 +60,15 @@ export default {
 </script>
 <style lang='css' scoped>
 .input_public {
-  margin: 15px;
-  margin-bottom: 22px;
+  /* margin: 20px;
+  margin-bottom: 22px; */
+  width: 500px;
+  height: 500px;
+  display: inline-block;
   overflow: hidden;
   background-color: var(--white);
-  border: 1px solid;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 1px,
     rgba(34, 34, 34, 0.74) 0px 0px 1px;
 }
@@ -74,22 +78,28 @@ export default {
   font-family: Arial, Helvetica, sans-serif;
   color: var(--white);
   font-weight: 600;
-  padding: 4px 8px;
+  padding: 5px 8px;
 }
 .info {
   float: left;
   margin-left: 6px;
   line-height: 28px;
 }
+.info_table{
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 1px solid #ccc;
+}
 .input_seq {
-  width: 1500px;
-  width: 95%;
+  width: 99%;
+  height: 90%;
   resize: none;
-  height: 150px;
+  /* height: 150px; */
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: 18px;
   resize: none;
   outline: none;
+    border: none;
 }
 </style>
