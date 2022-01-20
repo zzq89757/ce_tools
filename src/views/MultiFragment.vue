@@ -7,8 +7,14 @@
             <span class="tips">1</span>
             <span class="info">目的序列</span>
           </div>
-          <textarea type="text" class="input_seq" placeholder="请输入完整的目的序列" spellcheck="false"
-            v-limit-input-base></textarea>
+          <textarea
+            type="text"
+            class="input_seq"
+            placeholder="请输入完整的目的序列"
+            spellcheck="false"
+            v-limit-input-base
+            v-model="user_input"
+          ></textarea>
         </div>
 
         <div class="line_style input_public">
@@ -24,11 +30,9 @@
             <input type="radio" name="line" value="pcr" id="pcr" />
             <label for="pcr"> PCR扩增线性化 </label>
           </div>
-
         </div>
 
-        <div class="enzyme">
-        </div>
+        <div class="enzyme"></div>
 
         <div class="insert input_public">
           <div class="info_table">
@@ -36,147 +40,127 @@
             <span class="info">插入片段</span>
           </div>
           <div class="insert1">
-            <textarea type="textaera" class=" input_seq" placeholder="请输入插入片段" spellcheck="false"
-              v-limit-input-base></textarea>
+            <textarea
+              type="textaera"
+              class="input_seq"
+              placeholder="请输入插入片段"
+              spellcheck="false"
+              v-limit-input-base
+            ></textarea>
           </div>
-
         </div>
         <div class="button">
-          <input type="button" value="生成引物">
+          <input type="button" value="生成引物" />
         </div>
-
       </div>
 
       <div id="image_area">
-
+        <div class="picture">
+          <h2>{{user_input}}</h2>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  // import NavBar from "./NavBar.vue";
-  import cutpoint from '@/assets/js/select.json';
-  export default {
-    name: "MultiFragment",
-    data() {
-      return {
-        cutpoint,
-      };
-    },
+import cutpoint from "@/assets/js/select.json";
+export default {
+  name: "MultiFragment",
+  data() {
+    return {
+      cutpoint,
+      user_input:""
+    };
+  },
 
-    // components: {},
+  // components: {},
 
-    // computed: {},
+  // computed: {},
 
-    // mounted: {},
+  // mounted: {},
 
-    // methods: {},
-  };
-
+  // methods: {},
+};
 </script>
 <style scoped>
-  * {
-    padding: 0;
-    margin: 0;
-  }
+#component {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
 
-  input,
-  textarea {
-    outline-style: none;
-  }
+.input_public {
+  margin: 15px;
+  margin-bottom: 22px;
+  overflow: hidden;
+  background-color: var(--white);
+  border: 1px solid;
+  box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 1px,
+    rgba(34, 34, 34, 0.74) 0px 0px 1px;
+}
 
-  .lineStyle span,
-  label {
-    cursor: pointer;
-  }
+.info_table {
+  margin-bottom: 4px;
+}
 
-  input,
-  span,
-  label {
-    user-select: none;
-  }
+.tips {
+  background-color: var(--blue);
+  float: left;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--white);
+  font-weight: 600;
+  padding: 4px 8px;
+}
 
-  #component {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 30px;
-  }
+.info {
+  float: left;
+  margin-left: 6px;
+  line-height: 28px;
+}
 
-  .input_public {
-    margin: 15px;
-    margin-bottom: 22px;
-    overflow: hidden;
-    background-color: #fff;
-    border: 1px solid;
-    box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 1px, rgba(34, 34, 34, 0.74) 0px 0px 1px
-  }
+textarea {
+  box-sizing: border-box;
+  padding: 6px;
+  font-size: 16px;
+  resize: none;
+}
 
-  .info_table {
-    margin-bottom: 4px;
-  }
+#user_input {
+  width: 429px;
+}
 
-  .tips {
-    background-color: #04429a;
-  }
+.input_seq {
+  width: 380px;
+  height: 150px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
-  .tips {
-    float: left;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #fff;
-    font-weight: 600;
-    padding: 4px 8px;
+.check_line {
+  display: inline-block;
+  margin: 10px;
+}
 
-  }
+.check_line label {
+  display: inline-block;
+}
 
-  .info {
-    float: left;
-    margin-left: 6px;
-    line-height: 28px;
-  }
+.button,
+.button input {
+  display: inline-block;
+  width: 400px;
+  height: 60px;
+  color: var(--white);
+  font-size: 18px;
+  background-color: var(--blue);
+}
 
-  textarea {
-    box-sizing: border-box;
-    padding: 6px;
-    font-size: 16px;
-    resize: none;
-  }
-
-  #user_input {
-    width: 429px;
-  }
-
-  .input_seq {
-    width: 380px;
-    height: 150px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  .check_line {
-    display: inline-block;
-    margin: 10px;
-  }
-
-  .check_line label {
-    display: inline-block;
-  }
-
-  .button,
-  .button input {
-    display: inline-block;
-    width: 400px;
-    height: 60px;
-    color: #fff;
-    font-size: 18px;
-    background-color: #04429a;
-  }
-
-  #image_area {
-    width: 610px;
-    height: 610px;
-    margin-top: 12px;
-    box-sizing: border-box;
-    border: 1px solid #999;
-  }
+#image_area {
+  width: 610px;
+  height: 610px;
+  margin-top: 12px;
+  box-sizing: border-box;
+  border: 1px solid var(--grey);
+}
 </style>
