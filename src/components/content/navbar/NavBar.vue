@@ -3,7 +3,7 @@
     <nav class="topbar">
       <div class="banner">
         <div class="logo">
-          <slot>
+          <slot name="left">
             <a href="http://www.vazyme.com" target="blank"
               ><img src="https://crm.vazyme.com/cetool/images/u1102_logo.png"
             /></a>
@@ -18,15 +18,17 @@
           >{{ item.title }}
         </router-link>
         <div class="clogo">
-          <a class="cloud help">
-            <img src="@/assets/img/help.png" />
-          </a>
-          <a class="cloud" href="http://cloud.vazyme.com:83/" target="blank">
-            <img src="@/assets/img/cloud.png" />
-          </a>
-          <a class="cloud lan">
-            <img src="@/assets/img/lan.png" />
-          </a>
+          <slot name="right">
+            <a class="cloud help">
+              <img src="@/assets/img/help.png" />
+            </a>
+            <a class="cloud" href="http://cloud.vazyme.com:83/" target="blank">
+              <img src="@/assets/img/cloud.png" />
+            </a>
+            <a class="cloud lan">
+              <img src="@/assets/img/lan.png" />
+            </a>
+          </slot>
         </div>
       </div>
     </nav>
