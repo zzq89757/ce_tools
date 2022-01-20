@@ -59,7 +59,6 @@
 </template>
 
 <script>
-// import NavBar from "./NavBar.vue";
 import cutpoint from "@/assets/js/select.json";
 export default {
   name: "MultiFragment",
