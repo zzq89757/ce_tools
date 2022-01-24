@@ -59,13 +59,14 @@ export default {
 <style lang="css" scoped>
 .router-link-active {
   display: inline-block;
-  color: var(--blue);
+  color: var(--actived);
 }
 .topbar .banner .router-link-active::after {
   transform: scaleX(1);
 }
 .topbar {
   background-color: var(--white);
+  color: var(--deactived);
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
   padding-top: 2px;
 }
@@ -89,12 +90,12 @@ export default {
   content: "";
   width: 100%;
   height: 3px;
-  background-color: #04429a;
+  background-color: var(--actived);
   transform: scaleX(0);
   transition: all 0.4s ease;
 }
 .topbar .title:hover {
-  color: #04429a;
+  color: var(--actived);
 }
 .topbar .title:hover::after {
   transform: scaleX(1);
@@ -109,7 +110,7 @@ export default {
   display: inline-block;
   width: 200px;
   margin-top: 14px;
-  color: #999;
+  color: var(--deactived);
   cursor: pointer;
 }
 

@@ -16,10 +16,10 @@
 body {
   margin: 0px;
   background-color: #f5f5f5;
-  --blue: #04429a;
-  /* --blue: #0d74eb; */
+  --actived: #04429a;
+  --molandy:#6667aa;
   --white: #ffffff;
-  --grey: #999;
+  --deactived: #999;
   user-select: none;
 }
 
