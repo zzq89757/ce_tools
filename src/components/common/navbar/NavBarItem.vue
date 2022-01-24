@@ -70,6 +70,8 @@ export default {
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
   padding-top: 2px;
 }
+
+/* logo部分 */
 .logo {
   margin-top: 8px;
 }
@@ -77,7 +79,7 @@ export default {
 .topbar .logo img {
   height: 46px;
 }
-
+/* title部分 */
 .topbar .title {
   margin: 0px 30px;
   padding: 22px 0px;
@@ -105,7 +107,7 @@ export default {
   display: flex;
   justify-content: space-evenly;
 }
-
+/* 右边图标部分 */
 .clogo {
   display: inline-block;
   width: 200px;

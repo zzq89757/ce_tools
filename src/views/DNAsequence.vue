@@ -51,7 +51,7 @@ export default {
         {
           num: 1,
           message: "待处理序列",
-          tips: "多条序列请以换行符分割",
+          tips: "多条序列请以换行符分隔",
         },
         {
           num: 2,
@@ -161,7 +161,8 @@ button {
   /* border-radius: 30px; */
   color: var(--white);
   font-size: 18px;
-  background-color: var(--blue);
+  background-color: var(--actived);
+  background-color: #04439aca;
   background-color: #04439aca;
   /* outline: none; */
   border: 1px solid #04439ac7;
@@ -170,15 +171,15 @@ button {
   transition: 0.1s linear all;
 }
 .clean{
-  color: var(--blue);
+  color: var(--actived);
   background-color: var(--white);
-  border: 2px solid var(--blue);
+  border: 2px solid var(--actived);
 }
 button:hover {
   /* color: var(--white); */
   color: #fff;
-  background-color: var(--blue);
-  border: 2px solid var(--blue);
+  background-color: var(--actived);
+  border: 2px solid var(--actived);
 }
 
 .content {

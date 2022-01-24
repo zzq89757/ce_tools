@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-  <div class="destination_seq input_public">
+  <div class="input_public">
     <div class="info_table">
       <span class="tips">{{ message.num }}</span>
       <span class="info">{{ message.message }}</span>
@@ -40,9 +40,7 @@ export default {
   components: {},
 
   computed: {
-    filter_seq(){
-      return this.current_seq.toUpperCase().replace(/[^AGCT\n]+/g, "")
-    }
+
   },
 
   mounted: {},
@@ -60,8 +58,6 @@ export default {
 </script>
 <style lang='css' scoped>
 .input_public {
-  /* margin: 20px;
-  margin-bottom: 22px; */
   width: 500px;
   height: 500px;
   display: inline-block;
@@ -73,7 +69,7 @@ export default {
     rgba(34, 34, 34, 0.74) 0px 0px 1px;
 }
 .tips {
-  background-color: var(--blue);
+  background-color: var(--actived);
   float: left;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--white);
@@ -83,7 +79,7 @@ export default {
 .info {
   float: left;
   margin-left: 6px;
-  line-height: 28px;
+  line-height: 30px;
 }
 .info_table{
   width: 100%;
@@ -91,11 +87,11 @@ export default {
   border-bottom: 1px solid #ccc;
 }
 .input_seq {
-  width: 99%;
-  height: 90%;
+  width: calc(100% - 12px);
+  height: 460px;
+  height: calc(100% - 45px);
   resize: none;
-  /* height: 150px; */
-  margin-top: 10px;
+  /* margin-top: 10px; */
   margin-bottom: 10px;
   font-size: 18px;
   resize: none;
