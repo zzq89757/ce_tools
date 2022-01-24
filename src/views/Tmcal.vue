@@ -1,22 +1,17 @@
 <!--  -->
 <template>
   <div>
-    <input>
+    <Input>
+    <textarea v-limit-input-base spellcheck="false">
+
+    </textarea>
+    </Input>
 
   </div>
 </template>
 
 <script>
-import Vue from 'vue';
-// 创建一个限制用户输入四种碱基并自动转大写的自定义指令
-// Vue.directive('LimitInputBase', {
-//   bind(el) {
-//     el.oninput = () => {
-//       el.value = el.value.toUpperCase().match(/[AGCT]+/g);
-//       el.value = el.value.replace(/,/g,'');replace();
-//     };
-//   },
-// });
+import Input from "@/components/content/input/Input";
 export default {
   data () {
     return {
@@ -25,17 +20,14 @@ export default {
   },
   filters:{
     },
-  // components: {},
+  components: {Input},
 
   computed: {
     
     },
 
   mounted: {
-    inputLimit(){
-      console.log($event);
-      return (/[\d]/.test(String.fromCharCode($event.keyCode || $event.which)))
-    }
+
 
   },
 
