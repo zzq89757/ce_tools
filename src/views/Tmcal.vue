@@ -129,7 +129,7 @@ export default {
   /* display: flex; */
   width: 1200px;
   height: 605px;
-  margin: 30px auto;
+  margin: 4% auto;
   align-items: center;
   border: 1px solid #fff;
   border-radius: 4px;

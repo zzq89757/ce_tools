@@ -75,8 +75,7 @@ export default {
   width: 1200px;
   display: flex;
   justify-content: space-around;
-  margin: 30px auto;
-  margin-top: 30px;
+  margin: 4% auto;
   padding: 10px 0;
   border: 1px solid rgb(221, 221, 221);
   border-radius: 4px;
