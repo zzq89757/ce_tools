@@ -25,7 +25,7 @@
             <a class="cloud" href="http://cloud.vazyme.com:83/" target="blank">
               <img src="@/assets/img/cloud.png" />
             </a>
-            <a class="cloud lan">
+            <a class="cloud lan" @click="alert_message('你被骗啦,这个工具还没有英文版的哦~')">
               <img src="@/assets/img/lan.png" />
             </a>
           </slot>
@@ -53,6 +53,11 @@ export default {
       ],
     },
   },
+  methods:{
+    alert_message(aaa){
+      alert(aaa);
+    }
+  }
 };
 </script>
 
