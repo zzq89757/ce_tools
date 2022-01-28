@@ -3,11 +3,7 @@
     <div id="component">
       <div class="left">
         <Input class="input_seq"></Input>
-        <div class="input2" style="">
-          <div class="info_table">
-            <span class="tips">2</span>
-            <span class="info">线性化方式</span>
-          </div>
+        <Input class="input_shortseq input2" :message="input2_message">
           <div class="check_line">
             <div>
               <input type="radio" name="line" value="single" id="single" />
@@ -22,13 +18,10 @@
               <label for="pcr"> PCR扩增线性化 </label>
             </div>
           </div>
-        </div>
+        </Input>
 
-        <div class="enzyme"></div>
-        <Input class="input_seq" :message="input_message"></Input>
-        <div class="button">
-          <input type="button" value="生成引物" />
-        </div>
+        <Input class="input_seq" :message="input3_message"></Input>
+        <Button></Button>
       </div>
 
       <div id="image_area">
@@ -43,13 +36,19 @@
 <script>
 import cutpoint from "@/assets/js/select.json";
 import Input from "@/components/content/input/Input";
+import Button from "@/components/content/button/Button";
 export default {
   name: "MultiFragment",
   data() {
     return {
       cutpoint,
       user_input: "",
-      input_message: {
+      input2_message: {
+        num: 2,
+        message: "线性化方式",
+        tips: "多条插入片段请以换行符分隔",
+      },
+      input3_message: {
         num: 3,
         message: "插入片段",
         tips: "多条插入片段请以换行符分隔",
@@ -57,7 +56,7 @@ export default {
     };
   },
 
-  components: { Input },
+  components: { Input,Button },
 
   computed: {
     // just filter user input
@@ -88,20 +87,12 @@ export default {
   flex-direction: column;
   justify-content: space-between;
 }
-/* .input_public {
-  margin: 15px;
-  margin-bottom: 22px;
-  overflow: hidden;
-  background-color: var(--white);
-  border: 1px solid;
-  box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 1px,
-    rgba(34, 34, 34, 0.74) 0px 0px 1px;
-} */
 .input2 {
   width: 380px;
+  height: 220px;
   display: inline-block;
   background-color: var(--white);
-  border: 1px solid rgb(221, 221, 221);
+  /* border: 1px solid rgb(221, 221, 221); */
   border-radius: 4px;
 }
 .tips {
@@ -136,12 +127,9 @@ textarea {
 
 .input_seq {
   width: 380px;
-  height: 180px;
+  height: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
-}
-.resize {
-  height: 200px;
 }
 .check_line {
   display: flex;
@@ -153,15 +141,6 @@ textarea {
   display: inline-block;
 }
 
-.button,
-.button input {
-  display: inline-block;
-  width: 380px;
-  height: 60px;
-  color: var(--white);
-  font-size: 18px;
-  background-color: var(--actived);
-}
 
 #image_area {
   width: 560px;

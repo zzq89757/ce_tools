@@ -93,7 +93,6 @@ export default {
   resize: none;
   /* margin-top: 10px; */
   margin-bottom: 10px;
-  font-size: 18px;
   resize: none;
   outline: none;
     border: none;
