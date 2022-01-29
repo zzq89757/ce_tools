@@ -23,12 +23,7 @@
         <Input class="input_seq" :message="input3_message"></Input>
         <Button></Button>
       </div>
-
-      <div id="image_area">
-        <div class="picture">
-          <h2>{{ filterInput }}</h2>
-        </div>
-      </div>
+<img-area></img-area>
     </div>
   </div>
 </template>
@@ -37,6 +32,7 @@
 import cutpoint from "@/assets/js/select.json";
 import Input from "@/components/content/input/Input";
 import Button from "@/components/content/button/Button";
+import ImgArea from "@/components/content/img_area/ImgArea";
 export default {
   name: "MultiFragment",
   data() {
@@ -56,7 +52,7 @@ export default {
     };
   },
 
-  components: { Input,Button },
+  components: { Input,Button,ImgArea },
 
   computed: {
     // just filter user input

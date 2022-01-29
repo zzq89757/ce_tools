@@ -7,12 +7,7 @@
         <Input class="input_seq" :message="input_message_downstream"></Input>
         <Button></Button>
       </div>
-
-      <div id="image_area">
-        <div class="picture">
-          <h2>{{ filterInput }}</h2>
-        </div>
-      </div>
+      <img-area></img-area>
     </div>
   </div>
 </template>
@@ -21,6 +16,7 @@
 import cutpoint from "@/assets/js/select.json";
 import Input from "@/components/content/input/Input";
 import Button from "@/components/content/button/Button";
+import ImgArea from "@/components/content/img_area/ImgArea";
 export default {
   name: "MultiFragment",
   data() {
@@ -45,7 +41,7 @@ export default {
     };
   },
 
-  components: { Input,Button },
+  components: { Input,Button,ImgArea },
 
   computed: {
     // just filter user input
@@ -122,9 +118,6 @@ textarea {
   width: 380px;
   height: 90px;
 }
-.resize {
-  height: 200px;
-}
 .check_line {
   display: flex;
   justify-content: space-around;
@@ -133,17 +126,5 @@ textarea {
 
 .check_line label {
   display: inline-block;
-}
-
-
-#image_area {
-  width: 560px;
-  height: 560px;
-  margin-top: 8px;
-  background-color: var(--white);
-  box-sizing: border-box;
-  border: 1px solid var(--grey);
-  border: 1px solid rgb(221, 221, 221);
-  border-radius: 4px;
 }
 </style>

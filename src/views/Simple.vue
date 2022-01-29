@@ -33,7 +33,7 @@
     </div>
     <!-- 图谱预留空间 -->
     <div>
-      
+      <img-area></img-area>
     </div>
   </div>
 </template>
@@ -42,6 +42,7 @@
 import Input from "@/components/content/input/Input.vue";
 import Button from "@/components/content/button/Button";
 import jsondata from "@/assets/js/select.json";
+import ImgArea from '../components/content/img_area/ImgArea';
 export default {
   data() {
     return {
@@ -59,7 +60,7 @@ export default {
     };
   },
 
-  components: { Input, Button },
+  components: { Input, Button,ImgArea },
 
   // computed: {},
 
