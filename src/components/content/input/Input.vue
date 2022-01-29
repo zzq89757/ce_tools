@@ -63,7 +63,6 @@ export default {
   display: inline-block;
   overflow: hidden;
   background-color: var(--white);
-  border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 1px,
     rgba(34, 34, 34, 0.74) 0px 0px 1px;
@@ -91,7 +90,6 @@ export default {
   height: 460px;
   height: calc(100% - 45px);
   resize: none;
-  /* margin-top: 10px; */
   margin-bottom: 10px;
   resize: none;
   outline: none;

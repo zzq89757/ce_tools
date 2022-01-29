@@ -45,7 +45,7 @@
 
 <script>
 import Input from "@/components/content/input/Input";
-import Container from '../components/content/container/Container';
+import Container from '@/components/content/container/Container';
 export default {
   data() {
     return {
