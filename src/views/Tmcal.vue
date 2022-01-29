@@ -1,7 +1,7 @@
 <!--  -->
 <template>
-    <container>
-         <div class="main_content">
+  <container>
+    <div class="main_content">
       <div class="bts">
         <button
           @click="
@@ -28,16 +28,15 @@
           :message="information[1]"
           class="input2"
         >
-          <div></div>
         </Input>
       </div>
     </div>
-    </container>
+  </container>
 </template>
 
 <script>
 import Input from "@/components/content/input/Input";
-import Container from '@/components/content/container/Container';
+import Container from "@/components/content/container/Container";
 export default {
   data() {
     return {
@@ -58,7 +57,7 @@ export default {
     };
   },
 
-  components: { Input,Container },
+  components: { Input, Container },
 
   computed: {
     //对多条以换行符分割的序列取反向序列
@@ -131,9 +130,6 @@ export default {
 }
 .bts {
   overflow: hidden;
-  /* padding-top: 10px;
-  padding-left: 40px; */
-  /* display: inline-block; */
   padding-bottom: 14px;
 }
 button {
@@ -147,7 +143,6 @@ button {
   color: var(--white);
   font-size: 18px;
   background-color: var(--actived);
-  background-color: #04439aca;
   background-color: #04439aca;
   /* outline: none; */
   border: 1px solid #04439ac7;
@@ -166,12 +161,6 @@ button:hover {
   background-color: var(--actived);
   border: 2px solid var(--actived);
 }
-
-.content {
-  position: relative;
-  text-align: left;
-}
-
 .input1 {
   width: 660px;
   margin-right: 40px;
