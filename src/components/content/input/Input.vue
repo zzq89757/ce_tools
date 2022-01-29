@@ -39,9 +39,7 @@ export default {
   },
   components: {},
 
-  computed: {
-
-  },
+  computed: {},
 
   mounted: {},
 
@@ -80,7 +78,7 @@ export default {
   margin-left: 6px;
   line-height: 30px;
 }
-.info_table{
+.info_table {
   width: 100%;
   overflow: hidden;
   border-bottom: 1px solid #ccc;
@@ -93,6 +91,6 @@ export default {
   margin-bottom: 10px;
   resize: none;
   outline: none;
-    border: none;
+  border: none;
 }
 </style>
