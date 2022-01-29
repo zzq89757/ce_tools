@@ -26,7 +26,7 @@ export default {
 #image_area {
   width: 560px;
   height: 560px;
-  margin-top: 8px;
+  margin: 8px;
   background-color: var(--white);
   box-sizing: border-box;
   border: 1px solid var(--grey);

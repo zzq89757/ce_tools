@@ -1,31 +1,28 @@
 <template>
-  <div>
-    <div id="component">
-      <div class="left">
-        <Input class="input_seq"></Input>
-        <Input class="input_shortseq input2" :message="input2_message">
-          <div class="check_line">
-            <div>
-              <input type="radio" name="line" value="single" id="single" />
-              <label for="single">单酶切线性化 </label>
-            </div>
-            <div>
-              <input type="radio" name="line" value="double" id="double" />
-              <label for="double"> 双酶切线性化 </label>
-            </div>
-            <div>
-              <input type="radio" name="line" value="pcr" id="pcr" />
-              <label for="pcr"> PCR扩增线性化 </label>
-            </div>
+  <container>
+    <div class="left">
+      <Input class="input_seq"></Input>
+      <Input class="input_shortseq input2" :message="input2_message">
+        <div class="check_line">
+          <div>
+            <input type="radio" name="line" value="single" id="single" />
+            <label for="single">单酶切线性化 </label>
           </div>
-        </Input>
-
-        <Input class="input_seq" :message="input3_message"></Input>
-        <Button></Button>
-      </div>
-<img-area></img-area>
+          <div>
+            <input type="radio" name="line" value="double" id="double" />
+            <label for="double"> 双酶切线性化 </label>
+          </div>
+          <div>
+            <input type="radio" name="line" value="pcr" id="pcr" />
+            <label for="pcr"> PCR扩增线性化 </label>
+          </div>
+        </div>
+      </Input>
+      <Input class="input_seq" :message="input3_message"></Input>
+      <Button></Button>
     </div>
-  </div>
+    <img-area></img-area>
+  </container>
 </template>
 
 <script>
@@ -33,6 +30,7 @@ import cutpoint from "@/assets/js/select.json";
 import Input from "@/components/content/input/Input";
 import Button from "@/components/content/button/Button";
 import ImgArea from "@/components/content/img_area/ImgArea";
+import Container from "../components/content/container/Container";
 export default {
   name: "MultiFragment",
   data() {
@@ -52,7 +50,7 @@ export default {
     };
   },
 
-  components: { Input,Button,ImgArea },
+  components: { Input, Button, ImgArea, Container },
 
   computed: {
     // just filter user input
@@ -67,15 +65,6 @@ export default {
 };
 </script>
 <style scoped>
-#component {
-  width: 1200px;
-  display: flex;
-  justify-content: space-around;
-  margin: 4% auto;
-  padding: 10px 0;
-  border: 1px solid rgb(221, 221, 221);
-  border-radius: 4px;
-}
 .left {
   width: 560px;
   display: flex;
@@ -87,7 +76,6 @@ export default {
   height: 220px;
   display: inline-block;
   background-color: var(--white);
-  /* border: 1px solid rgb(221, 221, 221); */
   border-radius: 4px;
 }
 .tips {
@@ -116,10 +104,6 @@ textarea {
   resize: none;
 }
 
-#user_input {
-  width: 429px;
-}
-
 .input_seq {
   width: 380px;
   height: 100%;
@@ -134,17 +118,5 @@ textarea {
 
 .check_line label {
   display: inline-block;
-}
-
-
-#image_area {
-  width: 560px;
-  height: 560px;
-  margin-top: 8px;
-  background-color: var(--white);
-  box-sizing: border-box;
-  border: 1px solid var(--grey);
-  border: 1px solid rgb(221, 221, 221);
-  border-radius: 4px;
 }
 </style>

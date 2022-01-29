@@ -1,7 +1,7 @@
 <!--  -->
 <template>
-  <div class="content">
-    <div class="main_content">
+    <container>
+         <div class="main_content">
       <div class="bts">
         <button
           @click="
@@ -32,11 +32,12 @@
         </Input>
       </div>
     </div>
-  </div>
+    </container>
 </template>
 
 <script>
-import Input from "@/components/content/input/Input.vue";
+import Input from "@/components/content/input/Input";
+import Container from '@/components/content/container/Container';
 export default {
   data() {
     return {
@@ -57,7 +58,7 @@ export default {
     };
   },
 
-  components: { Input },
+  components: { Input,Container },
 
   computed: {
     //对多条以换行符分割的序列取反向序列
@@ -125,21 +126,10 @@ export default {
 };
 </script>
 <style lang="css" scoped>
-.content {
-  /* display: flex; */
-  width: 1200px;
-  height: 605px;
-  margin: 4% auto;
-  align-items: center;
-  border: 1px solid #fff;
-  border-radius: 4px;
-  border-color: #ddd;
-}
 .main_content {
-  margin: 14px;
+  margin: 8px;
 }
 .bts {
-  /* width: 1200px; */
   overflow: hidden;
   /* padding-top: 10px;
   padding-left: 40px; */

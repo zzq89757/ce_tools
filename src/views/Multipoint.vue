@@ -1,17 +1,13 @@
 <template>
-  <div>
-    <div id="component">
+    <container>
       <div class="left">
-        <Input class="input_seq" :message="input_message_upstream">
-        
-        </Input>
+        <Input class="input_seq" :message="input_message_upstream"> </Input>
         <Input class="input_shortseq" :message="short_input_message"></Input>
         <Input class="input_seq" :message="input_message_downstream"></Input>
         <Button></Button>
       </div>
       <img-area></img-area>
-    </div>
-  </div>
+    </container>
 </template>
 
 <script>
@@ -19,6 +15,7 @@ import cutpoint from "@/assets/js/select.json";
 import Input from "@/components/content/input/Input";
 import Button from "@/components/content/button/Button";
 import ImgArea from "@/components/content/img_area/ImgArea";
+import Container from "../components/content/container/Container";
 export default {
   name: "MultiFragment",
   data() {
@@ -43,7 +40,7 @@ export default {
     };
   },
 
-  components: { Input,Button,ImgArea },
+  components: { Input, Button, ImgArea, Container },
 
   computed: {
     // just filter user input
@@ -58,15 +55,6 @@ export default {
 };
 </script>
 <style scoped>
-#component {
-  width: 1200px;
-  display: flex;
-  justify-content: space-around;
-  margin: 4% auto;
-  padding: 10px 0;
-  border: 1px solid rgb(221, 221, 221);
-  border-radius: 4px;
-}
 .left {
   width: 560px;
   display: flex;
@@ -104,10 +92,6 @@ textarea {
   padding: 6px;
   font-size: 16px;
   resize: none;
-}
-
-#user_input {
-  width: 429px;
 }
 
 .input_seq {
