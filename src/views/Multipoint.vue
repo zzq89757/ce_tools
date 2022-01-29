@@ -2,7 +2,9 @@
   <div>
     <div id="component">
       <div class="left">
-        <Input class="input_seq" :message="input_message_upstream"></Input>
+        <Input class="input_seq" :message="input_message_upstream">
+        
+        </Input>
         <Input class="input_shortseq" :message="short_input_message"></Input>
         <Input class="input_seq" :message="input_message_downstream"></Input>
         <Button></Button>
