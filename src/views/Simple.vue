@@ -7,7 +7,7 @@
           <div class="check_line">
             <div>
               <select name="cut1" id="cut1">
-                <option value="none">不增加酶切位点</option>
+                <option value="none">不添加酶切位点</option>
                 <option
                   :value="item.key"
                   v-for="item in jsondata"
@@ -17,7 +17,7 @@
                 </option>
               </select>
               <select name="cut2" id="cut2">
-                <option value="none">不增加酶切位点</option>
+                <option value="none">不添加酶切位点</option>
                 <option
                   :value="item.key"
                   v-for="item in jsondata"
