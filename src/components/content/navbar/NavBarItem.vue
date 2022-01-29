@@ -19,14 +19,13 @@
         </router-link>
         <div class="clogo">
           <slot name="right">
-            <a class="cloud help">
+            <a>
               <img src="@/assets/img/help.png" />
             </a>
-            <a class="cloud" href="http://cloud.vazyme.com:83/" target="blank">
+            <a href="http://cloud.vazyme.com:83/" target="blank">
               <img src="@/assets/img/cloud.png" />
             </a>
             <a
-              class="cloud lan"
               @click="alert_message('你被骗啦,这个工具还没有英文版的哦~')"
             >
               <img src="@/assets/img/lan.png" />
@@ -47,7 +46,7 @@ export default {
   props: {
     pathway: {
       type: Array,
-      required: false,
+      required: true,
       default: [
         { title: "首页", route: "" },
         { title: "首页", route: "" },
@@ -124,7 +123,7 @@ export default {
   cursor: pointer;
 }
 
-.cloud {
+.clogo a {
   display: inline-block;
   line-height: 25px;
   margin: 0px 8px;
