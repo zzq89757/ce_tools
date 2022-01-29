@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import NavBarItem from "@/components/navbar/NavBarItem.vue";
+import NavBarItem from "@/components/content/navbar/NavBarItem.vue";
 export default {
   components: { NavBarItem },
   name: "NavBar",
