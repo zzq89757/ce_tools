@@ -42,6 +42,9 @@ textarea {
   padding: 6px;
 }
 
+select{
+  margin: 22px;
+}
 
 label {
   cursor: pointer;
