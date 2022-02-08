@@ -42,7 +42,7 @@
       <Input :message="message3" class="in"> </Input>
     </div>
     {{ user_check }}
-    {{user_check_detail}}
+    {{ user_check_detail }}
   </container>
 </template>
 
@@ -53,7 +53,7 @@ export default {
   data() {
     return {
       user_check: "clone",
-      user_check_detail:"",
+      user_check_detail: "",
       message1: {
         num: 1,
         message: "实验类型",
