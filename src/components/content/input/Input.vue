@@ -81,7 +81,7 @@ export default {
 .info_table {
   width: 100%;
   overflow: hidden;
-  border-bottom: 1px solid #ccc;
+  /* border-bottom: 1px solid #ccc; */
 }
 .input_seq {
   width: calc(100% - 12px);

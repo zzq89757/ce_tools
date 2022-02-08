@@ -6,7 +6,7 @@
         <div class="check_line">
           <div>
             <input type="radio" name="line" value="single" id="single" />
-            <label for="single">单酶切线性化 </label>
+            <label for="single"> 单酶切线性化 </label>
           </div>
           <div>
             <input type="radio" name="line" value="double" id="double" />
