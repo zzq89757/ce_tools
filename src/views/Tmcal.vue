@@ -16,21 +16,23 @@
       </div>
       <div>
         <Input
-          @uChange="userChange"
+          @uChange="userInput"
           ref="in"
           :message="information[0]"
           class="input1"
         >
         </Input>
         <Input
-          @uChange="userChange"
+          @uChange="userInput"
           ref="ou"
           :message="information[1]"
           class="input2"
+          v-model="primerMessage"
         >
         </Input>
       </div>
     </div>
+  <h2>{{primerMessage}}</h2>
   </container>
 </template>
 
@@ -40,8 +42,7 @@ import Container from "@/components/content/container/Container";
 export default {
   data() {
     return {
-      input_seq: "",
-      output_seq: "",
+      primer:'',
       information: [
         {
           num: 1,
@@ -60,67 +61,17 @@ export default {
   components: { Input, Container },
 
   computed: {
-    //对多条以换行符分割的序列取反向序列
-    dnareverse() {
-      let tmparray = this.input_seq.split("\n");
-      for (let i = 0; i < tmparray.length; i++) {
-        tmparray[i] = tmparray[i].split("").reverse().join("");
-      }
-      return tmparray.join("\n");
-    },
-    //决定是否展示输出框
-    showInput() {
-      if (!this.input_seq || !this.output_seq) {
-        return "";
-      }
-    },
-    //每条序列的长度
-    seq_length() {
-      let array = this.input_seq.split("\n");
-      let count_array = [];
-      for (let item of array) {
-        count_array.push(item.length);
-      }
-      return count_array;
-    },
-    //判断序列存在否
-    haveInput() {
-      if (this.seq_length.length == 1 && this.seq_length[0] == 0) {
-        return "none";
-      } else {
-        return "block";
-      }
-    },
+    primerMessage(){
+      return this.$utils.Tmcal(this.primer)
+    }
   },
-  // length stringfy
-  // length_string(){
-  //   return seq_length.filter(x=>x!=0).join(" ");
-  // },
+
   // mounted: {},
 
   methods: {
-    //对多条以换行符分割的序列取互补序列
-    get_complement(seq) {
-      let newstr = "";
-      let array = seq.split("\n");
-      for (let i = 0; i < array.length; i++) {
-        array[i] = array[i].replace(/(A|G|C|T)/g, function ($0, $1) {
-          return {
-            A: "T",
-            G: "C",
-            C: "G",
-            T: "A",
-          }[$1];
-        });
-      }
-      newstr = array.join("\n");
-      return newstr;
-    },
-    // 接收来自子组件的用户输入数据
-    userChange(recive_data) {
-      this.input_seq = recive_data;
-      console.log(recive_data);
-    },
+   userInput(a){
+     this.primer=a;
+   }
   },
 };
 </script>
