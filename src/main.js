@@ -9,6 +9,6 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  mode:"history",
+  mode: "history",
   render: h => h(App)
 })
