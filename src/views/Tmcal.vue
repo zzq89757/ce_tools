@@ -29,10 +29,23 @@
           class="input2"
           v-model="primerMessage"
         >
+          <div v-show="primerMessage.length" class="messageBox">
+            <p>
+              引物长度：{{ primerMessage.length }}bp
+            </p>
+            <p>
+              GC含量：{{ primerMessage.gcContent }}
+            </p>
+            <p>
+              引物Tm值：{{ primerMessage.tm }}°C
+            </p>
+            <p>
+              推荐PCR退火温度：{{ primerMessage.tuihuo }}°C
+            </p>
+          </div>
         </Input>
       </div>
     </div>
-  <h2>{{primerMessage}}</h2>
   </container>
 </template>
 
@@ -42,7 +55,7 @@ import Container from "@/components/content/container/Container";
 export default {
   data() {
     return {
-      primer:'',
+      primer: "",
       information: [
         {
           num: 1,
@@ -61,17 +74,17 @@ export default {
   components: { Input, Container },
 
   computed: {
-    primerMessage(){
-      return this.$utils.Tmcal(this.primer)
-    }
+    primerMessage() {
+      return this.$utils.Tmcal(this.primer);
+    },
   },
 
   // mounted: {},
 
   methods: {
-   userInput(a){
-     this.primer=a;
-   }
+    userInput(a) {
+      this.primer = a;
+    },
   },
 };
 </script>
@@ -118,5 +131,12 @@ button:hover {
 }
 .input2 {
   width: 444px;
+}
+p {
+  text-align: left;
+  margin: 5px;
+}
+.messageBox{
+  margin: 10px;
 }
 </style>
