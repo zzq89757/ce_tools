@@ -28,7 +28,6 @@
           ref="ou"
           :message="information[1]"
           class="input2"
-          v-model="primerMessage"
         >
           <div v-show="primerMessage.length" class="messageBox">
             <p>引物长度：{{ primerMessage.length }}bp</p>
