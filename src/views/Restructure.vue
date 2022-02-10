@@ -51,10 +51,11 @@
 <script>
 import Input from "@/components/content/input/Input";
 import Container from "@/components/content/container/Container";
+import ImgArea from "@/components/content/img_area/ImgArea";
 export default {
   data() {
     return {
-      a: "Container",
+      a: "ImgArea",
       user_check: "clone",
       user_check_detail: "",
       message1: {
@@ -99,7 +100,7 @@ export default {
     };
   },
 
-  components: { Input, Container },
+  components: { Input, Container,ImgArea },
 
   computed: {
     detail() {
