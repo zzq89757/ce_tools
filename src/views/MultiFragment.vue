@@ -24,6 +24,7 @@
           class="input_seq"
           v-limit:[1]
           spellcheck="false"
+          :placeholder="input3_message.tips"
         ></textarea>
       </Input>
       <Button></Button>

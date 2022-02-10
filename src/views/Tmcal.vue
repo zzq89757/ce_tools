@@ -22,6 +22,7 @@
             v-limit
             spellcheck="false"
             v-model.lazy="primer"
+            :placeholder="information[0].tips"
           ></textarea>
         </Input>
         <Input
@@ -77,20 +78,6 @@ export default {
   // mounted: {},
 
   methods: {
-    // userInput(a) {
-    //   this.primer = a;
-    // },
-  },
-  directives: {
-    base: {
-      bind(el) {
-        el.oninput = () => {
-          console.log("%c" + typeof el.value, "color:blue");
-          el.value = el.value.toUpperCase().replace(/[^AGCT]+/g, "");
-          console.log("%c" + el.value, "color:green");
-        };
-      },
-    },
   },
 };
 </script>

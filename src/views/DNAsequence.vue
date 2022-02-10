@@ -31,6 +31,7 @@
             class="input_seq"
             v-model.lazy="input_seq"
             spellcheck="false"
+            :placeholder="information[0].tips"
           >
           </textarea>
         </Input>
