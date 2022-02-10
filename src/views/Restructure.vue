@@ -43,6 +43,8 @@
     </div>
     {{ user_check }}
     {{ user_check_detail }}
+  <component :is="a">
+  </component>
   </container>
 </template>
 
@@ -52,6 +54,7 @@ import Container from "@/components/content/container/Container";
 export default {
   data() {
     return {
+      a: "Container",
       user_check: "clone",
       user_check_detail: "",
       message1: {
