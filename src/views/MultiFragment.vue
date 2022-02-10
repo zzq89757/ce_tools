@@ -18,7 +18,14 @@
           </div>
         </div>
       </Input>
-      <Input class="input_seq" :message="input3_message"></Input>
+      <Input class="input_seq" :message="input3_message">
+        <textarea
+          type="text"
+          class="input_seq"
+          v-limit:[1]
+          spellcheck="false"
+        ></textarea>
+      </Input>
       <Button></Button>
     </div>
     <img-area></img-area>

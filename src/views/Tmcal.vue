@@ -3,10 +3,10 @@
   <container>
     <div class="main_content">
       <div class="bts">
+        <button>计算</button>
         <button
           @click="
-            input_seq = '';
-            output_seq = '';
+            primer = '';
             $refs.in.current_seq = '';
           "
           class="clean"
@@ -15,12 +15,14 @@
         </button>
       </div>
       <div>
-        <Input
-          @uChange="userInput"
-          ref="in"
-          :message="information[0]"
-          class="input1"
-        >
+        <Input ref="in" :message="information[0]" class="input1">
+          <textarea
+            type="text"
+            class="input_seq"
+            v-limit
+            spellcheck="false"
+            v-model.lazy="primer"
+          ></textarea>
         </Input>
         <Input
           @uChange="userInput"
@@ -30,18 +32,10 @@
           v-model="primerMessage"
         >
           <div v-show="primerMessage.length" class="messageBox">
-            <p>
-              引物长度：{{ primerMessage.length }}bp
-            </p>
-            <p>
-              GC含量：{{ primerMessage.gcContent }}
-            </p>
-            <p>
-              引物Tm值：{{ primerMessage.tm }}°C
-            </p>
-            <p>
-              推荐PCR退火温度：{{ primerMessage.tuihuo }}°C
-            </p>
+            <p>引物长度：{{ primerMessage.length }}bp</p>
+            <p>GC含量：{{ primerMessage.gcContent }}</p>
+            <p>引物Tm值：{{ primerMessage.tm }}°C</p>
+            <p>推荐PCR退火温度：{{ primerMessage.tuihuo }}°C</p>
           </div>
         </Input>
       </div>
@@ -56,6 +50,7 @@ export default {
   data() {
     return {
       primer: "",
+      basen: "base",
       information: [
         {
           num: 1,
@@ -82,8 +77,19 @@ export default {
   // mounted: {},
 
   methods: {
-    userInput(a) {
-      this.primer = a;
+    // userInput(a) {
+    //   this.primer = a;
+    // },
+  },
+  directives: {
+    base: {
+      bind(el) {
+        el.oninput = () => {
+          console.log("%c" + typeof el.value, "color:blue");
+          el.value = el.value.toUpperCase().replace(/[^AGCT]+/g, "");
+          console.log("%c" + el.value, "color:green");
+        };
+      },
     },
   },
 };
@@ -136,7 +142,7 @@ p {
   text-align: left;
   margin: 5px;
 }
-.messageBox{
+.messageBox {
   margin: 10px;
 }
 </style>

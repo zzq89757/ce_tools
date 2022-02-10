@@ -10,7 +10,7 @@
         type="text"
         class="input_seq"
         :placeholder="message.tips"
-        v-limit-input-basen
+        v-limit
         spellcheck="false"
         v-model="current_seq"
         @input="userInput"

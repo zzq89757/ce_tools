@@ -1,51 +1,61 @@
 <!--  -->
 <template>
-
-    <container>
-       <div class="main_content">
-    <div class="bts">
-      <button @click="output_seq = dnareverse">反向</button>
-      <button @click="output_seq = get_complement(input_seq)">互补</button>
-      <button @click="output_seq = get_complement(dnareverse)">反向互补</button>
-      <button
-        @click="
-          input_seq = '';
-          output_seq = '';
-          $refs.in.current_seq = '';
-        "
-        class="clean"
-      >
-        清空
-      </button>
-    </div>
-    <div>
-      <Input @uChange="userChange" ref="in" :message="information[0]" class="input1"> </Input>
-      <Input
-        @uChange="userChange"
-        ref="ou"
-        :message="information[1]"
-        class="input2"
-      >
-        <textarea
-          readonly
-          v-limit-input-basen
-          class="input_seq"
-          v-model="output_seq"
-          spellcheck="false"
+  <container>
+    <div class="main_content">
+      <div class="bts">
+        <button @click="output_seq = dnareverse">反向</button>
+        <button @click="output_seq = get_complement(input_seq)">互补</button>
+        <button @click="output_seq = get_complement(dnareverse)">
+          反向互补
+        </button>
+        <button
+          @click="
+            input_seq = '';
+            output_seq = '';
+            $refs.in.current_seq = '';
+          "
+          class="clean"
         >
-        </textarea>
-      </Input>
+          清空
+        </button>
+      </div>
+      <div>
+        <Input
+          @uChange="userChange"
+          ref="in"
+          :message="information[0]"
+          class="input1"
+        >
+          <textarea
+            v-limit:[1]
+            class="input_seq"
+            v-model.lazy="input_seq"
+            spellcheck="false"
+          >
+          </textarea>
+        </Input>
+        <Input
+          @uChange="userChange"
+          ref="ou"
+          :message="information[1]"
+          class="input2"
+        >
+          <textarea
+            readonly
+            class="input_seq"
+            v-model="output_seq"
+            spellcheck="false"
+          >
+          </textarea>
+        </Input>
+      </div>
     </div>
-    </div>
-    </container>
-   
-
- 
+  </container>
 </template>
 
 <script>
 import Input from "@/components/content/input/Input";
-import Container from '@/components/content/container/Container';
+import Container from "@/components/content/container/Container";
 export default {
   data() {
     return {
@@ -66,7 +76,7 @@ export default {
     };
   },
 
-  components: { Input,Container, },
+  components: { Input, Container },
 
   computed: {
     //对多条以换行符分割的序列取反向序列
@@ -134,7 +144,7 @@ export default {
 };
 </script>
 <style lang="css" scoped>
-.main_content{
+.main_content {
   margin: 8px;
 }
 .bts {
@@ -156,7 +166,7 @@ button {
   cursor: pointer;
   transition: 0.1s linear all;
 }
-.clean{
+.clean {
   color: var(--actived);
   background-color: var(--white);
   border: 2px solid var(--actived);
@@ -170,14 +180,13 @@ button:hover {
 .content {
   position: relative;
   text-align: left;
-  }
+}
 
-.input1{
+.input1 {
   width: 660px;
   margin-right: 40px;
-
 }
-.input2{
+.input2 {
   width: 444px;
 }
 </style>
