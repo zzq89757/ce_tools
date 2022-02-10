@@ -20,15 +20,15 @@
         <div class="clogo">
           <slot name="right">
             <a>
-              <img src="@/assets/img/help.png" />
+              <img src="@/assets/img/help_blur.png" />
             </a>
             <a href="http://cloud.vazyme.com:83/" target="blank">
-              <img src="@/assets/img/cloud.png" />
+              <img src="@/assets/img/cloud_blur.png" />
             </a>
             <a
               @click="alert_message('你被骗啦,这个工具还没有英文版的哦~')"
             >
-              <img src="@/assets/img/lan.png" />
+              <img src="@/assets/img/lan_blur.png" />
             </a>
           </slot>
         </div>
@@ -85,7 +85,14 @@ export default {
 
 .topbar .logo img {
   height: 46px;
+  /* filter: grayscale(100%);
+  opacity: 0.66;
+  transition: .3s ease all; */
 }
+/* .topbar .logo img:hover{
+  filter: grayscale(0%);
+  opacity: 1;
+} */
 /* title部分 */
 .topbar .title {
   margin: 0px 30px;
@@ -132,5 +139,11 @@ export default {
 .clogo img {
   width: 29px;
   height: 29px;
+  filter: grayscale(100%);
+    opacity: 0.66;
+}
+.clogo img:hover{
+  filter: none;
+  opacity: 1;
 }
 </style>
