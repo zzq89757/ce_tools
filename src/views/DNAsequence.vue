@@ -3,21 +3,26 @@
   <container>
     <div class="main_content">
       <div class="bts">
-        <button @click="output_seq = dnareverse">反向</button>
-        <button @click="output_seq = get_complement(input_seq)">互补</button>
-        <button @click="output_seq = get_complement(dnareverse)">
-          反向互补
-        </button>
-        <button
-          @click="
+        <mini-button
+          :content="'反向'"
+          @click.native="output_seq = dnareverse"
+        ></mini-button>
+        <mini-button
+          :content="'互补'"
+          @click.native="output_seq = get_complement(input_seq)"
+        ></mini-button>
+        <mini-button
+          :content="'反向互补'"
+          @click.native="output_seq = get_complement(dnareverse)"
+        ></mini-button>
+        <mini-button
+          :content="'清空'"
+          @click.native="
             input_seq = '';
             output_seq = '';
             $refs.in.current_seq = '';
           "
-          class="clean"
-        >
-          清空
-        </button>
+        ></mini-button>
       </div>
       <div>
         <Input
@@ -57,6 +62,7 @@
 <script>
 import Input from "@/components/content/input/Input";
 import Container from "@/components/content/container/Container";
+import MiniButton from "../components/content/button/MiniButton";
 export default {
   data() {
     return {
@@ -77,7 +83,7 @@ export default {
     };
   },
 
-  components: { Input, Container },
+  components: { Input, Container, MiniButton },
 
   computed: {
     //对多条以换行符分割的序列取反向序列
@@ -88,34 +94,7 @@ export default {
       }
       return tmparray.join("\n");
     },
-    //决定是否展示输出框
-    showInput() {
-      if (!this.input_seq || !this.output_seq) {
-        return "";
-      }
-    },
-    //每条序列的长度
-    seq_length() {
-      let array = this.input_seq.split("\n");
-      let count_array = [];
-      for (let item of array) {
-        count_array.push(item.length);
-      }
-      return count_array;
-    },
-    //判断序列存在否
-    haveInput() {
-      if (this.seq_length.length == 1 && this.seq_length[0] == 0) {
-        return "none";
-      } else {
-        return "block";
-      }
-    },
   },
-  // length stringfy
-  // length_string(){
-  //   return seq_length.filter(x=>x!=0).join(" ");
-  // },
   // mounted: {},
 
   methods: {
@@ -152,32 +131,6 @@ export default {
   overflow: hidden;
   padding-bottom: 14px;
 }
-button {
-  width: 80px;
-  height: 40px;
-  float: left;
-  margin-right: 20px;
-  position: relative;
-  color: var(--white);
-  font-size: 18px;
-  background-color: var(--actived);
-  background-color: #04439aca;
-  border: 1px solid #04439ac7;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: 0.1s linear all;
-}
-.clean {
-  color: var(--actived);
-  background-color: var(--white);
-  border: 2px solid var(--actived);
-}
-button:hover {
-  color: #fff;
-  background-color: var(--actived);
-  border: 2px solid var(--actived);
-}
-
 .content {
   position: relative;
   text-align: left;

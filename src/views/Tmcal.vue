@@ -3,16 +3,14 @@
   <container>
     <div class="main_content">
       <div class="bts">
-        <button>计算</button>
-        <button
-          @click="
+        <mini-button :content="'计算'"></mini-button>
+        <mini-button
+          :content="'清空'"
+          @click.native="
             primer = '';
             $refs.in.current_seq = '';
           "
-          class="clean"
-        >
-          清空
-        </button>
+        ></mini-button>
       </div>
       <div>
         <Input ref="in" :message="information[0]" class="input1">
@@ -47,6 +45,7 @@
 <script>
 import Input from "@/components/content/input/Input";
 import Container from "@/components/content/container/Container";
+import MiniButton from "../components/content/button/MiniButton";
 export default {
   data() {
     return {
@@ -67,7 +66,7 @@ export default {
     };
   },
 
-  components: { Input, Container },
+  components: { Input, Container, MiniButton },
 
   computed: {
     primerMessage() {
@@ -77,8 +76,7 @@ export default {
 
   // mounted: {},
 
-  methods: {
-  },
+  methods: {},
 };
 </script>
 <style lang="css" scoped>
@@ -88,35 +86,6 @@ export default {
 .bts {
   overflow: hidden;
   padding-bottom: 14px;
-}
-button {
-  width: 80px;
-  height: 40px;
-  /* display: inline-block; */
-  float: left;
-  margin-right: 20px;
-  position: relative;
-  /* border-radius: 30px; */
-  color: var(--white);
-  font-size: 18px;
-  background-color: var(--actived);
-  background-color: #04439aca;
-  /* outline: none; */
-  border: 1px solid #04439ac7;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: 0.1s linear all;
-}
-.clean {
-  color: var(--actived);
-  background-color: var(--white);
-  border: 2px solid var(--actived);
-}
-button:hover {
-  /* color: var(--white); */
-  color: #fff;
-  background-color: var(--actived);
-  border: 2px solid var(--actived);
 }
 .input1 {
   width: 660px;

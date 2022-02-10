@@ -28,7 +28,7 @@ export default {
   },
   props: {
     message: {
-      tpye: Object,
+      type: Object,
       required: false,
       default: {
         num: 1,
