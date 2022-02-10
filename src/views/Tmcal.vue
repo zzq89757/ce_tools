@@ -3,12 +3,12 @@
   <container>
     <div class="main_content">
       <div class="bts">
-        <mini-button :content="'计算'"></mini-button>
+        <mini-button :content="'计算'" @click.native="getPrimerMessage(primer)"></mini-button>
         <mini-button
           :content="'清空'"
           @click.native="
             primer = '';
-            $refs.in.current_seq = '';
+            primerMessage = {};
           "
         ></mini-button>
       </div>
@@ -50,7 +50,7 @@ export default {
   data() {
     return {
       primer: "",
-      basen: "base",
+      primerMessage:{},
       information: [
         {
           num: 1,
@@ -69,14 +69,15 @@ export default {
   components: { Input, Container, MiniButton },
 
   computed: {
-    primerMessage() {
-      return this.$utils.Tmcal(this.primer);
-    },
   },
 
   // mounted: {},
 
-  methods: {},
+  methods: {
+    getPrimerMessage(primer){
+      return this.primerMessage=this.$utils.Tmcal(primer);
+    }
+  },
 };
 </script>
 <style lang="css" scoped>
