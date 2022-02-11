@@ -1,5 +1,22 @@
 <template>
-  <nav-bar-item :pathway="destination"></nav-bar-item>
+  <nav-bar-item :pathway="destination">
+    <div slot="left">
+      <a href="http://www.vazyme.com" target="blank"
+        ><img src="https://crm.vazyme.com/cetool/images/u1102_logo.png"
+      /></a>
+    </div>
+    <div slot="right">
+      <a>
+        <img src="@/assets/img/help_blur.png" />
+      </a>
+      <a href="http://cloud.vazyme.com:83/" target="blank">
+        <img src="@/assets/img/cloud_blur.png" />
+      </a>
+      <a @click="alert_message('你被骗啦,这个工具还没有英文版的哦~')">
+        <img src="@/assets/img/lan_blur.png" />
+      </a>
+    </div>
+  </nav-bar-item>
 </template>
 
 <script>

@@ -3,11 +3,7 @@
     <nav class="topbar">
       <div class="banner">
         <div class="logo">
-          <slot name="left">
-            <a href="http://www.vazyme.com" target="blank"
-              ><img src="https://crm.vazyme.com/cetool/images/u1102_logo.png"
-            /></a>
-          </slot>
+          <slot name="left"> </slot>
         </div>
         <router-link
           exact
@@ -18,19 +14,7 @@
           >{{ item.title }}
         </router-link>
         <div class="clogo">
-          <slot name="right">
-            <a>
-              <img src="@/assets/img/help_blur.png" />
-            </a>
-            <a href="http://cloud.vazyme.com:83/" target="blank">
-              <img src="@/assets/img/cloud_blur.png" />
-            </a>
-            <a
-              @click="alert_message('你被骗啦,这个工具还没有英文版的哦~')"
-            >
-              <img src="@/assets/img/lan_blur.png" />
-            </a>
-          </slot>
+          <slot name="right"> </slot>
         </div>
       </div>
     </nav>
@@ -140,9 +124,9 @@ export default {
   width: 29px;
   height: 29px;
   filter: grayscale(100%);
-    opacity: 0.66;
+  opacity: 0.66;
 }
-.clogo img:hover{
+.clogo img:hover {
   filter: none;
   opacity: 1;
 }
