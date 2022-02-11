@@ -8,10 +8,10 @@
 <script>
 import Button from './Button.vue';
 export default {
-  data () {
-    return {
-    };
-  },
+  // data () {
+  //   return {
+  //   };
+  // },
   props:{
     content:{
       type:String,
@@ -21,11 +21,11 @@ export default {
   },
   components: {Button},
 
-  computed: {},
+  // computed: {},
 
-  mounted: {},
+  // mounted: {},
 
-  methods: {}
+  // methods: {}
 }
 
 </script>

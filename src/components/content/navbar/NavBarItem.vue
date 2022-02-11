@@ -40,9 +40,9 @@
 <script>
 export default {
   name: "NavBar",
-  data() {
-    return {};
-  },
+  // data() {
+  //   return {};
+  // },
   props: {
     pathway: {
       type: Array,

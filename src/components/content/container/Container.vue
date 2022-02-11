@@ -6,20 +6,20 @@
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-    };
-  },
+// export default {
+//   data () {
+//     return {
+//     };
+//   },
 
-  components: {},
+//   components: {},
 
-  computed: {},
+//   computed: {},
 
-  mounted: {},
+//   mounted: {},
 
-  methods: {}
-}
+//   methods: {}
+// }
 
 </script>
 <style lang='css' scoped>

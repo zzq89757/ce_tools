@@ -2,25 +2,25 @@
 <template>
   <div id="image_area">
     <div class="picture">
-      <h2>{{ filterInput }}</h2>
+      
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {};
-  },
+// export default {
+//   data() {
+//     return {};
+//   },
 
-  components: {},
+//   components: {},
 
-  computed: {},
+//   computed: {},
 
-  mounted: {},
+//   mounted: {},
 
-  methods: {},
-};
+//   methods: {},
+// };
 </script>
 <style  scoped>
 #image_area {
