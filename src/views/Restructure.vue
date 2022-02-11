@@ -2,6 +2,8 @@
 <template>
   <container>
     <div>
+      <!-- <container class="in"></container> -->
+      <clone></clone>
       <Input :message="message1" class="in">
         <div class="check_line">
           <div>
@@ -43,8 +45,7 @@
     </div>
     {{ user_check }}
     {{ user_check_detail }}
-  <component :is="a">
-  </component>
+    <component :is="a"> </component>
   </container>
 </template>
 
@@ -52,6 +53,7 @@
 import Input from "@/components/content/input/Input";
 import Container from "@/components/content/container/Container";
 import ImgArea from "@/components/content/img_area/ImgArea";
+import Clone from "@/components/content/restructure/Clone";
 export default {
   data() {
     return {
@@ -100,7 +102,7 @@ export default {
     };
   },
 
-  components: { Input, Container,ImgArea },
+  components: { Input, Container, ImgArea,Clone },
 
   computed: {
     detail() {
@@ -119,5 +121,8 @@ export default {
 .in {
   height: 100px;
   display: block;
+}
+.mini_container {
+  width: 400px;
 }
 </style>
