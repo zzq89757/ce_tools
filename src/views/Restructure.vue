@@ -1,12 +1,12 @@
 <!-- 重组反应投入量计算 -->
 <template>
   <container>
-    <div>
+    <div class="card1">
       <!-- <container class="in"></container> -->
-      <clone></clone>
+      <!-- <clone></clone> -->
       <Input :message="message1" class="in">
         <div class="check_line">
-          <div>
+          <div class="lable_box">
             <input
               checked="true"
               type="radio"
@@ -17,7 +17,7 @@
             />
             <label for="clone"> 克隆 </label>
           </div>
-          <div>
+          <div class="lable_box">
             <input
               type="radio"
               name="line"
@@ -30,7 +30,8 @@
         </div>
       </Input>
       <Input :message="message2" class="in">
-        <div v-for="item in detail" :key="item.name">
+      <div class="check_line">
+                <div v-for="item in detail" :key="item.name" class="lable3">
           <input
             type="radio"
             name="clone_detail"
@@ -40,12 +41,16 @@
           />
           <label :for="item.name"> {{ item.tips }}</label>
         </div>
+      </div>
+
       </Input>
       <Input :message="message3" class="in"> </Input>
+      <Button></Button>
     </div>
-    {{ user_check }}
-    {{ user_check_detail }}
+    <!-- {{ user_check }}
+    {{ user_check_detail }} -->
     <component :is="a"> </component>
+    
   </container>
 </template>
 
@@ -54,6 +59,7 @@ import Input from "@/components/content/input/Input";
 import Container from "@/components/content/container/Container";
 import ImgArea from "@/components/content/img_area/ImgArea";
 import Clone from "@/components/content/restructure/Clone";
+import Button from "../components/content/button/Button.vue";
 export default {
   data() {
     return {
@@ -73,7 +79,7 @@ export default {
       message3: {
         num: 3,
         message: "序列长度",
-        tips: "",
+        tips: "多条序列以空格分隔",
       },
       clone_detail: [
         {
@@ -102,7 +108,7 @@ export default {
     };
   },
 
-  components: { Input, Container, ImgArea,Clone },
+  components: { Input, Container, ImgArea, Clone, Button },
 
   computed: {
     detail() {
@@ -120,9 +126,26 @@ export default {
 <style lang='css' scoped>
 .in {
   height: 100px;
-  display: block;
+  width: 400px;
+}
+.check_line{
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .mini_container {
   width: 400px;
+}
+.lable_box{
+  margin: 0px 20px;
+}
+.lable3{
+  margin: 0px 10px;
+}
+.card1{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 </style>

@@ -2,7 +2,7 @@
   <nav-bar-item :pathway="destination">
     <div slot="left">
       <a href="http://www.vazyme.com" target="blank"
-        ><img src="https://crm.vazyme.com/cetool/images/u1102_logo.png"
+        ><img src="@/assets/img/logo-blue.png"
       /></a>
     </div>
     <div slot="right">
