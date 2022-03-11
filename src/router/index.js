@@ -10,6 +10,7 @@ const Simple = () => import('@/views/Simple')
 const Tmcal = () => import('@/views/Tmcal')
 const DNAsequence = () => import('@/views/DNAsequence')
 const Restructure = () => import('@/views/Restructure')
+const BaseBox = () => import('@/components/content/base/BaseBox')
 
 Vue.use(Router)
 const routes = [{
@@ -40,6 +41,10 @@ const routes = [{
   path: '/tmcal',
   name: 'tmcal',
   component: Tmcal
+}, {
+  path: '/basebox',
+  name: 'basebox',
+  component: BaseBox
 }]
 export default new Router({
   mode: 'history',

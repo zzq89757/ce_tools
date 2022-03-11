@@ -5,7 +5,11 @@
   margin: 0;
 }
 html,body{
-  height:100%
+  height:100%;
+  --a:#67C23A;
+  --t:#E6A23C;
+  --c:#409EFF;
+  --g:#F56C6C;
 }
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;

@@ -23,7 +23,7 @@
 export default {
   data() {
     return {
-      current_seq: "",
+      // current_seq: "",
     };
   },
   props: {
@@ -36,6 +36,9 @@ export default {
         tips: "请输入完整的目的序列",
       },
     },
+    current_seq:{
+      type:String
+    }
   },
   // components: {},
 
