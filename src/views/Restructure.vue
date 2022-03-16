@@ -2,8 +2,6 @@
 <template>
   <container>
     <div class="card1">
-      <!-- <container class="in"></container> -->
-      <!-- <clone></clone> -->
       <Input :message="message1" class="in">
         <div class="check_line">
           <div class="lable_box">
@@ -42,15 +40,11 @@
           <label :for="item.name"> {{ item.tips }}</label>
         </div>
       </div>
-
       </Input>
       <Input :message="message3" class="in"> </Input>
       <Button></Button>
     </div>
-    <!-- {{ user_check }}
-    {{ user_check_detail }} -->
     <component :is="a"> </component>
-    
   </container>
 </template>
 
